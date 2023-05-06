@@ -1,11 +1,11 @@
-# Symmetry breaking in generative diffusion models
+# Symmetry Breaking in Generative Diffusion Models
 
-This repository is the official implementation of the paper [Symmetry breaking in generative diffusion models]()
- 
+This repository is the official implementation of the paper [Symmetry Breaking in Generative Diffusion Models]()
+
 
 ---
 
-<p style="text-align:justify">
+<p align="justify">
 We show the occurrence of symmetry breaking in diffusion models, dividing its generative 
 dynamics into two distinct phases: 1) a linear steady-state dynamics around a central fixed-point and 2) an attractor
 dynamics directed towards the data manifold. The instability of a central fixed-point divides these two phases, where
@@ -14,12 +14,11 @@ responsible for the diversity of the generated samples. Using a Gaussian late st
 we significantly boost performance in fast samplers while at the same time improving diversity over the generated images.
 </p> 
 
-<figure>
-  <img src="./imgs/ddim_samples_diversity_5_800_tc_4.png" alt="Image 1" style="width:45%; float:left;">
-  <img src="./imgs/gslddim_samples_diversity_5_500_tc_4.png" alt="Image 2" style="width:45%; float:right;">
-  <figcaption>DDIM 5 denosing steps .</figcaption>
-</figure>
-
+<p float="center">
+  <img src="./imgs/ddim_samples_diversity_5_800_tc_4.png" alt="Image 1" style="width:40%">
+  <img src="./imgs/gslddim_samples_diversity_5_500_tc_4.png" alt="Image 2" style="width:40%">
+  <img src="./imgs/diversity_plot.png" alt="Image 3" style="width:18%">
+</p>
 
 
 
