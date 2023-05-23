@@ -6,12 +6,25 @@ This repository is the official implementation of the paper [Symmetry Breaking i
 ---
 
 <p align="justify">
-We show the occurrence of symmetry breaking in diffusion models, dividing its generative 
-dynamics into two distinct phases: 1) a linear steady-state dynamics around a central fixed-point and 2) an attractor
-dynamics directed towards the data manifold. The instability of a central fixed-point divides these two phases, where
-the early dynamics does not significantly contribute to the final generation with resulting window of instability being
-responsible for the diversity of the generated samples. Using a Gaussian late start approximation schem 
-we significantly boost performance in fast samplers while at the same time improving diversity over the generated images.
+We show that the dynamics of diffusion models exhibit a "symmetry breaking" phenomenon, dividing the generative dynamics
+in two distinct phases: 1) A linear steady-state dynamics around a central fixed-point and 2) an attractor dynamics directed
+towards the data manifold. These two "phases" are separated by the change in stability of the central fixed-point, with the
+resulting window of instability being responsible for the diversity of the generated samples. In an intuitive sense, the dynamics of a generated sample passes from a phase of equal potentiality,
+where any (synthetic) datum could be generated, to a denoising phase where the (randomly) "selected" datum is fully denoised.
+An overview of spontaneous symmetry breaking in diffusion models is illustrated in the figure below:
+</p> 
+
+<p float="center">
+  <img src="./imgs/main_image_hq.png" alt="Image 1" style="width:100%">
+</p>
+
+<p align="justify">
+Our findings challenge the current dominant conception that the generative process of diffusion models is
+essentially comprised of a single denoising phase. In particular, we show that
+an accurate simulation of the early dynamics does not significantly contribute to the final generation, since early fluctuations
+are reverted to the central fixed point. To leverage this insight, we propose a Gaussian late initialization scheme, which 
+significantly improves model performance, achieving up to 3x FID improvements on fast samplers, while also increasing sample
+diversity, e.g. racial composition of generated CelebA images (samples below for 5 denoising steps), as illustrated below: 
 </p> 
 
 <p float="center">
@@ -20,19 +33,37 @@ we significantly boost performance in fast samplers while at the same time impro
   <img src="./imgs/diversity_plot.png" alt="Image 3" style="width:18%">
 </p>
 
+Our work offers a new way to understand the generative dynamics of diffusion models that has the potential to bring 
+about higher performance and less biased fast-samplers.
 
+## Symmetry Breaking in 1D diffusion model 
 
+To help you begin understanding the symmetry breaking phenomenon, we present the following 1D example.
+ 
+|                                      Link                                      | Description                                     |
+|:------------------------------------------------------------------------------:|:------------------------------------------------|
+| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]() | Symmetry Breaking in 1D diffusion model         |
+|                                [1D eample]("./1d_example.ipynb")                                | Local File |
+ 
 
-
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 
 ## Requirements
+
+### Dependencies 
 
 To install requirements:
 
 ```setup
 pip install -r requirements.txt
 ```
+
+
+### Stats files for quantitative evaluation
+
+We provide the stats file for all our experiments. You can download [`cifar10_stats.npz`](https://drive.google.com/file/d/14UB27-Spi8VjZYKST3ZcT8YVhAluiFWI/view?usp=sharing)  and save it to `assets/stats/`. Check out [#5](https://github.com/yang-song/score_sde/pull/5) on how to compute this stats file for new datasets.
+
+
+
 
 >📋  Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
 
