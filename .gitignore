@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.idea/
-
+notebooks/eval_toy_example/
 # C extensions
 *.so
 

@@ -40,10 +40,10 @@ about higher performance and less biased fast-samplers.
 
 To help you begin understanding the symmetry breaking phenomenon, we present the following 1D example.
  
-|                                      Link                                      | Description                                     |
-|:------------------------------------------------------------------------------:|:------------------------------------------------|
-| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]() | Symmetry Breaking in 1D diffusion model         |
-|                                [1D eample]("./1d_example.ipynb")                                | Local File |
+|                                                    Link                                                    | Description                                     |
+|:----------------------------------------------------------------------------------------------------------:|:------------------------------------------------|
+| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](./notebooks/1d_example.ipynb) | Symmetry Breaking in 1D diffusion model         |
+|                                     [1D eample]("./1d_example.ipynb")                                      | Local File |
  
 
 
