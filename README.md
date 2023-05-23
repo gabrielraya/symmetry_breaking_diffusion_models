@@ -1,12 +1,12 @@
-# Symmetry Breaking in Generative Diffusion Models
+# Spontaneous Symmetry Breaking in Generative Diffusion Models
 
-This repository is the official implementation of the paper [Symmetry Breaking in Generative Diffusion Models]()
+This repository is the official implementation of the paper [Spontaneous Symmetry Breaking in Generative Diffusion Models]()
 
 
 ---
 
 <p align="justify">
-We show that the dynamics of diffusion models exhibit a "symmetry breaking" phenomenon, dividing the generative dynamics
+We show that the dynamics of diffusion models exhibit a "spontaneous symmetry breaking" phenomenon, dividing the generative dynamics
 in two distinct phases: 1) A linear steady-state dynamics around a central fixed-point and 2) an attractor dynamics directed
 towards the data manifold. These two "phases" are separated by the change in stability of the central fixed-point, with the
 resulting window of instability being responsible for the diversity of the generated samples. In an intuitive sense, the dynamics of a generated sample passes from a phase of equal potentiality,
