@@ -1,4 +1,4 @@
-# Spontaneous Symmetry Breaking in Generative Diffusion Models
+# Symmetry Breaking in Generative Diffusion Models
 
 This repository is the official implementation of the paper [Spontaneous Symmetry Breaking in Generative Diffusion Models]()
 
@@ -36,7 +36,7 @@ diversity, e.g. racial composition of generated CelebA images (samples below for
 Our work offers a new way to understand the generative dynamics of diffusion models that has the potential to bring 
 about higher performance and less biased fast-samplers.
 
-## Symmetry Breaking in 1D diffusion model 
+## Demostrations and tutorials
 
 To help you begin understanding the symmetry breaking phenomenon, we present the following 1D example.
  
