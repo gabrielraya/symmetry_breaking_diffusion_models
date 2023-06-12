@@ -17,6 +17,11 @@ An overview of spontaneous symmetry breaking in diffusion models is illustrated 
 <p float="center">
   <img src="./imgs/main_image_hq.png" alt="Image 1" style="width:100%">
 </p>
+The following illustration represents this phenomenon for the one-dimensional diffusion model, where a symmetry-breaking event is indicated by a notable change in the potential well's shape. For instance, upon reaching a critical value, denoted as $\theta_c$, the potential well splits. This split indicates a shift in the system's dynamics.
+<p float="center">
+  <img src="./imgs/one-dimensional.gif" alt="Image 1" style="width:100%">
+</p>
+
 
 <p align="justify">
 Our findings challenge the current dominant conception that the generative process of diffusion models is
@@ -65,5 +70,3 @@ Make sure to download the following files
 | Checkpoints | ``              | Trained diffusion model checkpoint.                                              |
 
  
-
-This code implementation is partly based on the DDPM implementation by  [Song et al. (2021)](https://github.com/yang-song/score_sde_pytorch).
