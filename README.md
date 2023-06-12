@@ -17,12 +17,13 @@ An overview of spontaneous symmetry breaking in diffusion models is illustrated 
 <p float="center">
   <img src="./imgs/main_image_hq.png" alt="Image 1" style="width:100%">
 </p>
-The following illustration represents this phenomenon for the one-dimensional diffusion model, where a symmetry-breaking event is indicated by a notable change in the potential well's shape. For instance, upon reaching a critical value, denoted as $\theta_c$, the potential well splits. This split indicates a shift in the system's dynamics.
-<p float="center">
-  <img src="./imgs/one-dimensional.gif" alt="Image 1" style="width:100%">
+
+<p align="justify">
+This phenomenon is clearly observable in the one-dimensional case. A symmetry-breaking event, marked by a significant change in the potential well's shape, occurs upon reaching a critical value. This triggers a split in the potential well, signifying a dynamic shift and effectively illustrating these two generative phases.
 </p>
-
-
+<p align="center">
+  <img src="./imgs/one-dimensional.gif" alt="Image 1" width="75%" />
+</p>
 <p align="justify">
 Our findings challenge the current dominant conception that the generative process of diffusion models is
 essentially comprised of a single denoising phase. In particular, we show that
