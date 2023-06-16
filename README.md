@@ -19,7 +19,7 @@ An overview of spontaneous symmetry breaking in diffusion models is illustrated 
 </p>
 
 <p align="justify">
-This phenomenon is clearly observable in the one-dimensional case. A symmetry-breaking event, marked by a significant change in the potential well's shape, occurs upon reaching a critical value. This triggers a split in the potential well, signifying a dynamic shift and effectively illustrating these two generative phases.
+This phenomenon is clearly observable in the one-dimensional case. A symmetry-breaking event, marked by a significant change in the potential well's shape, occurs upon reaching a critical value. This triggers a split in the potential well, signifying a shift in the dynamics and effectively illustrating these two generative phases.
 </p>
 <p align="center">
   <img src="./imgs/one-dimensional.gif" alt="Image 1" width="75%" />
@@ -70,4 +70,32 @@ Make sure to download the following files
 | Stats files | `assets/stats` | Files contating the statistics (mean, and covariance) for evaluating FID scores. |
 | Checkpoints | ``              | Trained diffusion model checkpoint.                                              |
 
- 
+
+## Training
+
+To train the diffusion model on e.g., CIFAR10, run this command:
+
+```train
+python main.py --workdir="./results/ddpm_cifar10" --config="configs/ddpm/cifar10.py" --mode="train"
+```
+
+>📋  To train the model on other dataset, just replace the config file and the corresponding workdir
+> For MNIST for example `python main.py --workdir="./results/ddpm_mnist" --config="configs/ddpm/mnist.py" --mode="train"`
+
+## Evaluation
+
+### Get Stats Files
+
+To evaluate the trained model we first need to obtain the stats files, you can download the files [here]()
+or by running the following command:
+
+```eval
+ python main.py --config="configs/ddpm/cifar10.py" --mode="fid_stats"
+```
+
+### FID scores
+
+```eval
+ python main.py --config="configs/ddpm/cifar10.py" --mode="fid_stats"
+```
+
