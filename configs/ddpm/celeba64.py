@@ -34,7 +34,7 @@ def get_config():
   evaluate = config.eval 
   evaluate.batch_size = 500
   evaluate.checkpoint = 16
-  config.bayes.batch_size = 250 # for normalized pixels evaluation 
+  #config.bayes.batch_size = 250 # for normalized pixels evaluation
 
   # data
   data = config.data
