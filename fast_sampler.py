@@ -79,11 +79,12 @@ def get_approx_stats(train_ds, diffusion, t, config):
     return mu, cov
 
 
-def gauss_approx_stats(config, stats_dir="assets/stats_gauss_approx"):
+def gauss_approx_stats(config, stats_dir="assets/stats_gauss_approx", t_start=None):
     """ Create Gaussian approximation statistics file containing the mu and Sigma for FID scores..
     Args:
       config: Configuration to use.
       fid_dir: The subfolder for storing fid statistics.
+      t_start: Time step for which to compute the Gaussian approximation statistics. If None, runs for all t-values in the list.
     """
 
     # Create directory to save data stats
@@ -100,7 +101,9 @@ def gauss_approx_stats(config, stats_dir="assets/stats_gauss_approx"):
     mus = []
     covs = []
 
-    for t in [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]:
+    t_values = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000] if t_start is None else [t_start]
+
+    for t in t_values:
         logging.info("Making Gaussian approximation T -- : %d" % (t))
         if config.data.image_size == 256:
             mu, cov = get_approx_stats_HQ(train_ds, diffusion, t, config)
