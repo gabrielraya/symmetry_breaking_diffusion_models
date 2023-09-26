@@ -2,7 +2,7 @@
 Library with the samplers and functions related to the sampling processes both forward and backwards
 """
 import abc
-import torch 
+import torch
 import numpy as np
 from tqdm import tqdm
 from models import utils as mutils
@@ -304,8 +304,8 @@ def get_fast_sampler(config, diffusion, model, inverse_scaler, sampler_name="ddi
         with torch.no_grad():
             # reverse time partition [T, 0]
             for i, j in tqdm(zip(reversed(seq), reversed(seq_next)), total=len(seq)):
-                t = (torch.ones(x.shape[0]) * i).to(config.device)
-                t_next = (torch.ones(x.shape[0]) * j).to(config.device)
+                t = (torch.ones(x.shape[0]) * i)
+                t_next = (torch.ones(x.shape[0]) * j)
                 x, x_mean = sampler.update_fn(x, t, t_next)
             return inverse_scaler(x_mean if denoise else x)
 
@@ -313,8 +313,8 @@ def get_fast_sampler(config, diffusion, model, inverse_scaler, sampler_name="ddi
         with torch.no_grad():
             # reverse time partition [T, 0]
             for i, j in tqdm(zip(reversed(seq), reversed(seq_next)), total=len(seq)):
-                t = (torch.ones(x.shape[0]) * i).to(config.device)
-                t_next = (torch.ones(x.shape[0]) * j).to(config.device)
+                t = (torch.ones(x.shape[0]) * i)
+                t_next = (torch.ones(x.shape[0]) * j)
                 x, x_mean = sampler.update_fn(x, t, t_next, eta=1.0)
             return inverse_scaler(x_mean if denoise else x)
 
@@ -326,8 +326,8 @@ def get_fast_sampler(config, diffusion, model, inverse_scaler, sampler_name="ddi
         with torch.no_grad():
             # reverse time partition [T, 0]
             for i, j in tqdm(zip(reversed(seq), reversed(seq_next)), total=len(seq)):
-                t = (torch.ones(x.shape[0]) * i).to(config.device)
-                t_next = (torch.ones(x.shape[0]) * j).to(config.device)
+                t = (torch.ones(x.shape[0]) * i)
+                t_next = (torch.ones(x.shape[0]) * j)
                 x = gen_order_4(x, t, t_next, model_fn, alphas_cump, ets)
             return inverse_scaler(x if denoise else x)
 
@@ -356,8 +356,8 @@ def get_deterministic_trajectories(config, diffusion, model):
         with torch.no_grad():
             # reverse time partition [T, 0]
             for i, j in tqdm(zip(reversed(seq), reversed(seq_next)), total=len(seq)):
-                t = (torch.ones(x.shape[0]) * i).to(config.device)
-                t_next = (torch.ones(x.shape[0]) * j).to(config.device)
+                t = (torch.ones(x.shape[0]) * i)
+                t_next = (torch.ones(x.shape[0]) * j)
                 x, x_mean = sampler.update_fn(x, t, t_next)
 
                 if n==len(seq):
