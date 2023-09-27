@@ -116,7 +116,11 @@ def gauss_approx_stats(config, stats_dir="assets/stats_gauss_approx", t_start=No
     covs = np.stack(covs)
 
     # Save data distribution moments mu and conv for FID scores
-    filename = f'{config.data.dataset.lower()}_{config.data.image_size}_stats.npz'
+    if t_start is None:
+        filename = f'{config.data.dataset.lower()}_{config.data.image_size}_stats.npz'
+    else:
+        filename = f'{config.data.dataset.lower()}_{config.data.image_size}_{t_start}_stats.npz'
+
     with tf.io.gfile.GFile(os.path.join(stats_dir, filename), "wb") as fout:
         io_buffer = io.BytesIO()
         np.savez_compressed(io_buffer, mu=mus, cov=covs)
