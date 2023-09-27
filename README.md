@@ -49,7 +49,7 @@ To help you begin understanding the symmetry breaking phenomenon, we present the
 |                                                            Link                                                             | Description                                                                    |
 |:---------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------|
 |         [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](./notebooks/1d_example.ipynb)          | Symmetry Breaking in 1D diffusion model                                        |
-| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](./notebooks/gaussian_late_initalization.ipynb) | Load our pretrained checkpoints and play with our Gaussian late initialization |
+| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ONQgBFye2MF9YSHszNvYApzqKYmh_JpA?usp=sharing) | Load our pretrained checkpoints and play with our Gaussian late initialization |
  
 
 
@@ -63,16 +63,10 @@ To install requirements:
 pip install -r requirements.txt
 ```
 
-Make sure to download the following files 
+You can directly train and evaluate the model on your particular data following the commands below. However, 
+for merely reproducing the results on the paper using the pretrained models, please refer to the section [Pre-trained Models](#pre-trained-models)
 
-| File        | location      | Description                                                                      |
-|-------------|---------------|----------------------------------------------------------------------------------|
-| Stats files | `assets/stats` | Files contating the statistics (mean, and covariance) for evaluating FID scores. |
-| Checkpoints | ``              | Trained diffusion model checkpoint.                                              |
-
-
-## Training
-
+### Training
 To train the diffusion model on e.g., CIFAR10, run this command:
 
 ```train
@@ -81,10 +75,14 @@ python main.py --workdir="./results/ddpm_cifar10" --config="configs/ddpm/cifar10
 
 >📋  To train the model on other dataset, just replace the config file and the corresponding workdir
 > For MNIST for example `python main.py --workdir="./results/ddpm_mnist" --config="configs/ddpm/mnist.py" --mode="train"`
+> For CelebA 64x64 : `python main.py --workdir="./results/ddpm_celeba64" --config="configs/ddpm/celeba64.py" --mode="train"`
 
-## Evaluation
+This will train a model using the configuration found in `configs/ddpm/XXXXX.py`. During training, the validation batch size is 
+the same as the training batch size.
 
-### Get Stats Files
+### Evaluation
+
+#### Get Stats Files
 
 To evaluate the trained model we first need to obtain the stats files, you can download the files [here]()
 or by running the following command:
@@ -99,3 +97,5 @@ or by running the following command:
  python main.py --config="configs/ddpm/cifar10.py" --mode="fid_stats"
 ```
 
+
+### More to be added soon here!
