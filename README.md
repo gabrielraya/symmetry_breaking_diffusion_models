@@ -1,6 +1,6 @@
-# Symmetry Breaking in Generative Diffusion Models
+# Spontaneous Symmetry Breaking in Generative Diffusion Models
 
-This repository is the official implementation of the paper [Spontaneous Symmetry Breaking in Generative Diffusion Models]()
+This repository is the official implementation of the NeurIPS 2023 paper [Spontaneous Symmetry Breaking in Generative Diffusion Models](https://arxiv.org/abs/2305.19693)
 
 
 ---
@@ -44,8 +44,8 @@ about higher performance and less biased fast-samplers.
 
 ## Demostrations and tutorials
 
-To help you begin understanding the symmetry breaking phenomenon, we present the following 1D example.
- 
+To facilitate your understanding of the phenomenon of spontaneous symmetry breaking in diffusion models, we have provided the following examples.
+
 |                                                            Link                                                             | Description                                                                    |
 |:---------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------|
 |         [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](./notebooks/1d_example.ipynb)          | Symmetry Breaking in 1D diffusion model                                        |
@@ -98,4 +98,68 @@ or by running the following command:
 ```
 
 
-### More to be added soon here!
+
+## Pre-trained Models
+You can immediately use our pre-trained models by downloading the corresponding files using the links below:
+
+
+
+| Checkpoint path                                                                                                              | FID  | 
+|:-----------------------------------------------------------------------------------------------------------------------------|:----:|
+| [`results/checkpoints/ddpm_cifar10/`](https://drive.google.com/file/d/102EdTmv3WQIuUAOItr00HF0ax1oz3Xa7/view?usp=drive_link) | 3.08 | 
+| [`results/checkpoints/ddpm_celeba64/`](https://drive.google.com/file/d/1-y-lZ4ujmtbebKEpoRtZllEripKuvnbR/view?usp=sharing)   | 3.2  | 
+
+
+
+
+
+Make sure to download the following files for evaluation
+
+| File        | location                                    | Description                                                                      |
+|-------------|---------------------------------------------|----------------------------------------------------------------------------------|
+| Stats files | `assets/stats`                              | Files contating the statistics (mean, and covariance) for evaluating FID scores. |
+| Checkpoints | `results/checkpoints/ddpm_xxxx/checkpoints` | Trained diffusion model checkpoint.                                              |
+
+where `xxxx` is the name of the dataset.
+
+
+## Results
+
+
+
+### Boosting performance of fast samplers 
+
+| Dataset         | n   | **gls-DDPM** | DDPM   | gls-DDIM | DDIM   | gls-PNDM | PNDM   |
+|-----------------|-----|----------|--------|----------|--------|----------|--------|
+| **MNIST**       | 10  | **4.21**     | 6.75   | **2.44**     | 4.46   | **5.02**     | 14.36  |
+|                 | 5   | **6.95**     | 13.25  | **6.95**     | 13.25  | **5.11**     | 21.22  |
+|                 | 3   | **11.92**    | 42.63  | **11.92**    | 42.63  | **38.23**    | 154.89 |
+| **CIFAR10**     | 10  | **28.77**    | 43.35  | **15.98**    | 19.79  | **5.90**     | 8.35   |
+|                 | 5   | **42.46**    | 84.82  | **26.36**    | 44.61  | **9.55**     | 13.77  |
+|                 | 3   | **57.03**    | 146.95 | **42.31**    | 109.37 | **34.20**    | 103.11 |
+| **CelebA32**    | 10  | **11.05**    | 26.79  | **7.27**     | 11.37  | **2.88**     | 4.92   |
+|                 | 5   | **14.79**    | 40.92  | **10.83**    | 23.45  | **4.2**      | 6.61   |
+|                 | 3   | **18.93**    | 59.75  | **16.24**    | 45.34  | **28.60**    | 235.87 |
+| **Imagenet64**  | 10  | **57.31**    | 65.68  | **36.25**    | 38.21  | **27.9**     | 28.27  |
+|                 | 5   | **75.11**    | 99.99  | **52.11**    | 68.21  | **33.35**    | 34.86  |
+|                 | 3   | **91.69**    | 145.71 | **76.92**    | 126.3  | **50.92**    | 70.58  |
+| **CelebA64**    | 10  | **23.79**    | 36.66  | **15.82**    | 19.37  | **6.80**     | 8.03   |
+|                 | 5   | **31.24**    | 48.38  | **22.06**    | 28.51  | **9.26**     | 10.26  |
+|                 | 3   | **37.05**    | 62.18  | **29.96**    | 50.304 | **51.72**    | 171.75 |
+<div style="text-align: justify">
+Table 1: Summary of findings regarding image generation quality, as measured by FID scores.
+The performance of the stochastic DDPM sampler is compared to the deterministic DDIM and
+PNDM samplers in the vanilla case, as well as our Gaussian late start initialization scheme
+denoted as “gls”. Results are presented for 3, 5, and 10 denoising steps (denoted as “n”) across
+diverse datasets.
+</div>
+
+
+### Miscellaneous
+
+**Acknowledgement** - This code implementation is partly based on the DDPM implementation by  [Song et al. (2021)](https://github.com/yang-song/score_sde_pytorch).
+
+**Contact** - Feel free to reach out by sending me an email to <g.raya@jads.nl> or opening an issue. Your feedback on what's working well or any issues you encounter is valuable!.
+I'm curious about how you would use this in your project, so do let me know!
+
+ 
