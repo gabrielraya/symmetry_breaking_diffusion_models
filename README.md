@@ -155,11 +155,25 @@ diverse datasets.
 </div>
 
 
+
 ### Miscellaneous
 
 **Acknowledgement** - This code implementation is partly based on the DDPM implementation by  [Song et al. (2021)](https://github.com/yang-song/score_sde_pytorch).
 
-**Contact** - Feel free to reach out by sending me an email to <g.raya@jads.nl> or opening an issue. Your feedback on what's working well or any issues you encounter is valuable!.
-I'm curious about how you would use this in your project, so do let me know!
+**Contact** - Feel free to reach out by sending an email to <g.raya@jads.nl> or opening an issue. Your feedback on what's working well or any issues you encounter is valuable!.
+We are also curious about how you would use this in your project, so do let us know!
 
- 
+
+## References
+
+Please consider citing our paper if you find the code helpful for your research.
+
+```bib
+@article{
+    raya2023spontaneous,  
+    title={Spontaneous symmetry breaking in generative diffusion models},  
+    author={Gabriel Raya and Luca Ambrogioni},  
+    year={2023},  
+    journal={arXiv preprint arxiv:2305.19693}  
+}
+```
