@@ -1,6 +1,6 @@
 # Spontaneous Symmetry Breaking in Generative Diffusion Models
 
-This repository is the official implementation of the NeurIPS 2023 paper [Spontaneous Symmetry Breaking in Generative Diffusion Models](https://arxiv.org/abs/2305.19693)
+This repository is the official implementation of the NeurIPS 2023 paper [Spontaneous Symmetry Breaking in Generative Diffusion Models](https://arxiv.org/abs/2305.19693).  For a detailed video explanation, see our [video paper presentation](https://www.youtube.com/watch?v=IG0NNE9bpWU).
 
 
 ---
@@ -153,8 +153,6 @@ PNDM samplers in the vanilla case, as well as our Gaussian late start initializa
 denoted as “gls”. Results are presented for 3, 5, and 10 denoising steps (denoted as “n”) across
 diverse datasets.
 </div>
-
-
 
 ### Miscellaneous
 
